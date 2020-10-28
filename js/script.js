@@ -68,7 +68,7 @@ class Cell {
 
 const call1 = new Cell(2, 1, 2);
 
-const getRandomCell = () => {
+const getRandomCell = (value = 2) => {
   let x = Math.floor(Math.random() * 4) + 1;
   let y = Math.floor(Math.random() * 4) + 1;
 
@@ -77,7 +77,7 @@ const getRandomCell = () => {
     y = Math.floor(Math.random() * 4) + 1;
   }
 
-  const newCell = new Cell(2, y, x);
+  const newCell = new Cell(value, y, x);
   return newCell;
 }
 
@@ -106,12 +106,17 @@ const startGame = () => {
 };
 
 const addCell = () => {
-  const newCell = getRandomCell();
+  let value = 2;
+  if (Math.floor(Math.random() * 10) == 9) {
+    value = 4;
+  }
+  const newCell = getRandomCell(value);
   data[newCell._row - 1][newCell._column - 1] = newCell;
   render(gameField, newCell.getElement());
 }
 
 const collapseCells = (first, second) => {
+
   const x = first._column - 1;
   const y = first._row - 1;
 
@@ -144,7 +149,7 @@ const moveLeft = () => {
             targetX = k;
           } else {
             if (data[i][k]._value === targetCell._value) {
-              console.log("Данные совпадают");
+              targetCell.move(targetX, i);
               isMerged = collapseCells(data[i][k], targetCell);
             }
             break;
@@ -175,7 +180,7 @@ const moveRight = () => {
             targetX = k;
           } else {
             if (data[i][k]._value === targetCell._value) {
-              console.log("Данные совпадают");
+              targetCell.move(targetX, i);
               isMerged = collapseCells(data[i][k], targetCell);
             }
             break;
@@ -205,7 +210,7 @@ const moveUp = () => {
 
           } else {
             if (data[k][j]._value === targetCell._value) {
-              console.log("Данные совпадают");
+              targetCell.move(j, targetY);
               isMerged = collapseCells(data[k][j], targetCell);
             }
             break;
@@ -238,7 +243,7 @@ const moveDown = () => {
 
           } else {
             if (data[k][j]._value === targetCell._value) {
-              console.log("Данные совпадают");
+              targetCell.move(j, targetY);
               isMerged = collapseCells(data[k][j], targetCell);
             }
             break;

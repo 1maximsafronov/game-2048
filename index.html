@@ -5,11 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <main>
+  <header class="main-header container">
+    <h1 class="main-header__title">2048</h1>
+    <div class="main-header__controll">
+      <div class="main-header__score score">
+        <p class="score__current">12345</p>
+        <p class="score__best">54321</p>
+      </div>
+      <button class="main-header__new-game-btn btn">Новая игра</button>
+    </div>
+  </header>
+  <main class="container">
     <section class="game">
       <div class="game-grid">
         <div class="game-grid__cell"></div>
