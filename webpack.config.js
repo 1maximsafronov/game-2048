@@ -7,16 +7,17 @@ module.exports = {
     filename: `script.js`,
     path: path.join(__dirname, `public`)
   },
-  devtool: `source-maps`,
+  devtool: `source-map`,
   devServer: {
     contentBase: path.join(__dirname, `public`),
-    watchContentBase: true
+    watchContentBase: true,
+    open: true,
   },
   module: {
     rules: [
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       }
     ]
   }
