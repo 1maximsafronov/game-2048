@@ -22,7 +22,7 @@
   "devDependencies": {
     "css-loader": "4.0.0",
     "eslint": "6.1.0",
-    "eslint-config-htmlacademy": "0.5.2",
+    "eslint-config-htmlacademy": "0.6.0",
     "moment-locales-webpack-plugin": "1.2.0",
     "style-loader": "1.2.1",
     "webpack": "4.43.0",
