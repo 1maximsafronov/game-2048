@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/1maximsafronov/game-2048#readme",
   "devDependencies": {
-    "css-loader": "4.0.0",
+    "css-loader": "5.0.1",
     "eslint": "6.1.0",
     "eslint-config-htmlacademy": "0.5.2",
     "moment-locales-webpack-plugin": "1.2.0",
