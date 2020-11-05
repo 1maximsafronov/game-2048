@@ -21,7 +21,7 @@
   "homepage": "https://github.com/1maximsafronov/game-2048#readme",
   "devDependencies": {
     "css-loader": "5.0.1",
-    "eslint": "6.1.0",
+    "eslint": "7.12.1",
     "eslint-config-htmlacademy": "0.6.0",
     "style-loader": "2.0.0",
     "webpack": "5.4.0",
